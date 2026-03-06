@@ -1,14 +1,30 @@
 package game.engine.cards;
 
 public abstract class Card {
-   String name;
-   String description;
-   int rarity;
-   boolean lucky;
+   private final String name;
+   private final String description;
+   private final int rarity;
+   private final boolean lucky;
   public  Card(String name, String description, int rarity, boolean lucky){
      this.name=name;
      this.discription=discription;
      this.rarity;
      this.lucky=lucky;
   }
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getRarity() {
+        return rarity;
+    }
+
+    public boolean isLucky() {
+        return lucky;
+    }
+   
 }
