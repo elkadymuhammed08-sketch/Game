@@ -3,9 +3,9 @@ package game.engine.monsters;
 import game.engine.Role;
 
 public abstract class Monster implements Comparable<Monster>{
-    private String name;
-    private String description;
-    private Role role;
+    private final String name;
+    private final String description;
+    private  Role role;
     private Role originalRole;
     private int energy;
     private int position;
