@@ -5,26 +5,27 @@ public abstract class Card {
    private final String description;
    private final int rarity;
    private final boolean lucky;
-  public  Card(String name, String description, int rarity, boolean lucky){
-     this.name=name;
-     this.discription=discription;
-     this.rarity;
-     this.lucky=lucky;
-  }
+   
+   public  Card(String name, String description, int rarity, boolean lucky){
+     this.name = name;
+     this.description = description;
+     this.rarity = rarity;
+     this.lucky = lucky;
+    }
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public int getRarity() {
-        return rarity;
+        return this.rarity;
     }
 
     public boolean isLucky() {
-        return lucky;
+        return this.lucky;
     }
    
 }

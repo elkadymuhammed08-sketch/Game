@@ -4,9 +4,9 @@ public class EnergyStealCard extends Card{
   private final int energy;
   public EnergyStealCard(String name, String description, int rarity, int energy){
     super(name, description, rarity, true);
-        this.energy = energy;
+    this.energy = energy;
   }
    public int getEnergy() {
-        return energy;
+        return this.energy;
     }
 }

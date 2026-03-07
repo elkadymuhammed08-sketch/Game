@@ -5,8 +5,8 @@ import game.engine.Role;
 public abstract class Monster implements Comparable<Monster>{
     private final String name;
     private final String description;
-    private  Role role;
-    private Role originalRole;
+    private Role role;
+    private final Role originalRole;
     private int energy;
     private int position;
     private boolean frozen;
@@ -36,8 +36,8 @@ public abstract class Monster implements Comparable<Monster>{
     public Role getRole(){
         return this.role;
     }
-    public void setRole(Role r){
-        this.role = r;
+    public void setRole(Role role){
+        this.role = role;
     }
     public Role getOriginalRole(){
         return this.originalRole;
@@ -45,28 +45,28 @@ public abstract class Monster implements Comparable<Monster>{
     public int getEnergy(){
         return this.energy;
     }
-    public void setEnergy(int e){
-        if(e<0){
+    public void setEnergy(int energy){
+        if(energy<0){
             this.energy = 0;
         }
         else{
-            this.energy = e;
+            this.energy = energy;
         }
     }
     public int getPosition(){
         return this.position;
     }
-    public void setPosition(int p){
-        if(p>99){
+    public void setPosition(int position){
+        if(position>99){
             this.position = 0;
             return;
         }
-        if(p<0){
+        if(position<0){
             this.position = 0;
             return;
         }
         else{
-            this.position = p;
+            this.position = position;
         }
     }
     public boolean isFrozen(){
@@ -78,8 +78,8 @@ public abstract class Monster implements Comparable<Monster>{
     public int getConfusionTurns(){
         return this.confusionTurns;
     }
-    public void setConfusionTurns(int c){
-        this.confusionTurns = c;
+    public void setConfusionTurns(int confusionTurns){
+        this.confusionTurns = confusionTurns;
     }
 
 }
