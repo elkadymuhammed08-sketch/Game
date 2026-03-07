@@ -21,4 +21,28 @@ public class Board {
         }
     }
 
+    public static cell[][] getBoardCells(){
+        return boardcells;
+    }
+
+    public static ArrayList<Monster> getStationedMonsters(){
+        return stationedMonsters;
+    }
+
+    public static ArrayList<Card> getOriginalCards(){
+        return originalCards;
+    }
+
+    public static ArrayList<Card> getCards(){
+        return cards;
+    }
+
+    public static void setStationedMonsters(ArrayList<Monster> newStationedMonsters){
+        Board.stationedMonsters=newStationedMonsters;
+    }
+
+    public static void setCards(ArrayList<Card> newCards){
+        Board.cards=newCards;
+    }
+
 }
