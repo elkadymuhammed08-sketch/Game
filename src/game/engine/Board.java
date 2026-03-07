@@ -21,8 +21,8 @@ public class Board {
         }
     }
 
-    public static cell[][] getBoardCells(){
-        return boardcells;
+    public Cell[][] getBoardCells(){
+        return boardCells;
     }
 
     public static ArrayList<Monster> getStationedMonsters(){

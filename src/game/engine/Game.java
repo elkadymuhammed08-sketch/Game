@@ -2,7 +2,7 @@ package game.engine;
 import game.engine.cards.Card;
 import game.engine.monsters.Monster;
 import game.engine.dataloader.DataLoader;
-import game.engine.enums.Role; // Assuming Role enum is in game.engine based on Section 3.1
+import game.engine.Role; // Assuming Role enum is in game.engine based on Section 3.1
 import java.util.ArrayList;
 import java.util.Random;
 import java.io.IOException;
