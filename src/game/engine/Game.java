@@ -1,27 +1,25 @@
 package game.engine;
-import game.engine.cards.Card;
 import game.engine.monsters.Monster;
 import game.engine.dataloader.DataLoader;
-import game.engine.Role; // Assuming Role enum is in game.engine based on Section 3.1
 import java.util.ArrayList;
 import java.util.Random;
 import java.io.IOException;
-import java.util.Random;
 
 
 public class Game {
-    public static final Board board;
-    public static final ArrayList<Monster> allMonsters;
-    public static final Monster player;
-    public static final Monster opponent;
-    public static Monster current;
+    private final Board board;
+    private final ArrayList<Monster> allMonsters;
+    private final Monster player;
+    private final Monster opponent;
+    private Monster current;
 
     public Game(Role playerRole) throws IOException{
-        board =new Board(DataLoader.readCards());
-        allMonsters=DataLoader.readMonsters();
-        Role opponentRole=(player.Role==SCARER)?Role.LAUGHER:Role.SCARER;
-        this.opponent=selectRandomMonsterByRole(opponentRole);
-        this.current=this.player;
+        board = new Board(DataLoader.readCards());
+        allMonsters = DataLoader.readMonsters();
+        Role opponentRole = (playerRole==Role.SCARER)?Role.LAUGHER:Role.SCARER;
+        this.opponent = selectRandomMonsterByRole(opponentRole);
+        this.player = selectRandomMonsterByRole(playerRole);
+        this.current = this.player;
         
         
     }
@@ -29,10 +27,10 @@ public class Game {
 
     private Monster selectRandomMonsterByRole(Role role){
         int size=allMonsters.size();
-        ArrayList<Monster> selectedMonsters
+        ArrayList<Monster> selectedMonsters = new ArrayList<>();
         for(int i=0;i<size;i++){
             Monster currentMonster=allMonsters.get(i);
-            if(currentMonster.Role==role){
+            if(currentMonster.getRole()==role){
                 selectedMonsters.add(currentMonster);
             }
         }
@@ -40,27 +38,27 @@ public class Game {
         return selectedMonsters.get(rand.nextInt(size));
     }
 
-    public static getBoard (){
+    public Board getBoard (){
         return board;
     }
 
-    public static void getAllMonsters(){
+    public ArrayList<Monster> getAllMonsters(){
         return allMonsters;
     }
 
-    public static void getPlayer(){
+    public Monster getPlayer(){
         return player;
     }
 
-    public static void getOpponent(){
+    public Monster getOpponent(){
         return opponent;
     }
 
-    public static void getCurrent(){
+    public Monster getCurrent(){
         return current;
     }
 
-    public static Monster setCurrent(Monster current){
+    public void setCurrent(Monster current){
         this.current=current;
     }
         
