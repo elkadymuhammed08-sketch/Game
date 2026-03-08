@@ -34,23 +34,23 @@ public class DataLoader {
         while ((line = bufferedReader.readLine())!=null) { //readLine only returns one line per call
             String[] data = line.split(","); //no array length needed
             if(data[0].equals("SWAPPER")){
-                SwapperCard swapperCard = new SwapperCard(data[1], data[2], Integer.parseInt(data[3]));
+                Card swapperCard = new SwapperCard(data[1], data[2], Integer.parseInt(data[3]));
                 cards.add(swapperCard);
             }
             if(data[0].equals("SHIELD")){
-                ShieldCard shieldCard = new ShieldCard(data[1], data[2], Integer.parseInt(data[3]));
+                Card shieldCard = new ShieldCard(data[1], data[2], Integer.parseInt(data[3]));
                 cards.add(shieldCard);
             }
             if(data[0].equals("ENERGYSTEAL")){
-                EnergyStealCard energyStealCard = new EnergyStealCard(data[1], data[2], Integer.parseInt(data[3]), Integer.parseInt(data[4]));
+                Card energyStealCard = new EnergyStealCard(data[1], data[2], Integer.parseInt(data[3]), Integer.parseInt(data[4]));
                 cards.add(energyStealCard);
             }
             if(data[0].equals("STARTOVER")){
-                StartOverCard startOverCard = new StartOverCard(data[1], data[2], Integer.parseInt(data[3]), Boolean.parseBoolean(data[4]));
+                Card startOverCard = new StartOverCard(data[1], data[2], Integer.parseInt(data[3]), Boolean.parseBoolean(data[4]));
                 cards.add(startOverCard);
             }
             if(data[0].equals("CONFUSION")){
-                ConfusionCard confusionCard = new ConfusionCard(data[1], data[2], Integer.parseInt(data[3]), Integer.parseInt(data[4]));
+                Card confusionCard = new ConfusionCard(data[1], data[2], Integer.parseInt(data[3]), Integer.parseInt(data[4]));
                 cards.add(confusionCard);
             }
         }
@@ -64,16 +64,16 @@ public class DataLoader {
         while((line = bufferedReader.readLine())!=null){
             String[] data = line.split(",");
             if(data.length==3){
-                DoorCell doorCell = new DoorCell(data[0], Role.valueOf(data[1]), Integer.parseInt(data[2]));
+                Cell doorCell = new DoorCell(data[0], Role.valueOf(data[1]), Integer.parseInt(data[2]));
                 cells.add(doorCell);
             }
             else{
                 if(Integer.parseInt(data[1])>0){
-                    ConveyorBelt conveyorBelt = new ConveyorBelt(data[0], Integer.parseInt(data[1]));
+                    Cell conveyorBelt = new ConveyorBelt(data[0], Integer.parseInt(data[1]));
                     cells.add(conveyorBelt);
                 }
                 if(Integer.parseInt(data[1])<0){
-                    ContaminationSock contaminationSock = new ContaminationSock(data[0], Integer.parseInt(data[1]));
+                    Cell contaminationSock = new ContaminationSock(data[0], Integer.parseInt(data[1]));
                     cells.add(contaminationSock);
                 }
             }
@@ -88,19 +88,19 @@ public class DataLoader {
         while((line = bufferedReader.readLine())!=null){
             String[] data = line.split(",");
             if(data[0].equals("DASHER")){
-                Dasher dasher = new Dasher(data[1], data[2], Role.valueOf(data[3]), Integer.parseInt(data[4]));
+                Monster dasher = new Dasher(data[1], data[2], Role.valueOf(data[3]), Integer.parseInt(data[4]));
                 monsters.add(dasher);
             }
             if(data[0].equals("DYNAMO")){
-                Dynamo dynamo = new Dynamo(data[1], data[2], Role.valueOf(data[3]), Integer.parseInt(data[4]));
+                Monster dynamo = new Dynamo(data[1], data[2], Role.valueOf(data[3]), Integer.parseInt(data[4]));
                 monsters.add(dynamo);
             }
             if(data[0].equals("SCHEMER")){
-                Schemer schemer = new Schemer(data[1], data[2], Role.valueOf(data[3]), Integer.parseInt(data[4]));
+                Monster schemer = new Schemer(data[1], data[2], Role.valueOf(data[3]), Integer.parseInt(data[4]));
                 monsters.add(schemer);
             }
             if(data[0].equals("MULTITASKER")){
-                MultiTasker multiTasker = new MultiTasker(data[1], data[2], Role.valueOf(data[3]), Integer.parseInt(data[4]));
+                Monster multiTasker = new MultiTasker(data[1], data[2], Role.valueOf(data[3]), Integer.parseInt(data[4]));
                 monsters.add(multiTasker);
             }
         }
